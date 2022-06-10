@@ -42,18 +42,6 @@ class Main {
       //breaking blocks with different pickaxes
       //select the wood pickaxe
       inv.changeSelection(1);
-      
-      //add a mined block to the inventory
-      inv.addItem(player1.mineBlock(22, 93, ((((Weapon)inv.getItem())).getDamage())), 1, 3);
-      inv.addItem(player1.mineBlock(24, 93, ((((Weapon)inv.getItem())).getDamage())), 1, 4);
-
-      inv.changeSelection(2);
-      
-      inv.addItem(player1.mineBlock(29, 93, ((((Weapon)inv.getItem())).getDamage())), 1, 3);
-      inv.addItem(player1.mineBlock(12, 93, ((((Weapon)inv.getItem())).getDamage())), 1, 6);
-      
-      
-      System.out.println(inv.toString());
    
       //Testing character related methods (weapons and food as well)
       
