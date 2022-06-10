@@ -17,8 +17,52 @@ int agility, int luck){
      this.perception = perception;
      this.endurance = endurance;
      this.charisma = charisma;
-     this.intelligence = intelligence;
+     this.intelligence =
+       intelligence;
      this.agility = agility;
      this.luck = luck;
    }
+  
+  public int getStrength() {
+      return this.strength;
+   }
+  
+  public int getPerception() {
+      return this.perception;
+   }
+  
+  public int getEndurance() {
+      return this.endurance;
+   }
+  
+  public int getCharisma() {
+      return this.charisma;
+   }
+  
+  public int getIntelligence() {
+      return this.hunger;
+   }
+  
+  public int getAgility() {
+      return this.agility;
+   }
+  
+   public int getLuck() {
+      return this.luck;
+   }
+  
+     public String toString(){
+      String output = "S.P.E.C.I.A.L Stats: ";
+      output += "\nName: ";
+      output += name;
+      output += "\nHealth: ";
+      output += health;
+      output += "\nHunger: ";
+      output += hunger;
+      output += "\nXP: ";
+      output += xp;
+      output += "\nCoordinates: (";
+      output += x + ", " + y + ")";
+      
+      return output;
 }
