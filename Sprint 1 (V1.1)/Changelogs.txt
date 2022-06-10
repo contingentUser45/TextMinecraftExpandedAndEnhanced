@@ -1,0 +1,4 @@
+June 10th 2022 v 0.1
++ added SPECIAL stats
++ added Location
+- removed blocks
