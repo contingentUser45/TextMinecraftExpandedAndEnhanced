@@ -53,16 +53,20 @@ int agility, int luck){
   
      public String toString(){
       String output = "S.P.E.C.I.A.L Stats: ";
-      output += "\nName: ";
-      output += name;
-      output += "\nHealth: ";
-      output += health;
-      output += "\nHunger: ";
-      output += hunger;
-      output += "\nXP: ";
-      output += xp;
-      output += "\nCoordinates: (";
-      output += x + ", " + y + ")";
+      output += "\nStrength: ";
+      output += strength;
+      output += "\nPerception: ";
+      output += perception;
+      output += "\nEndurance: ";
+      output += endurance;
+      output += "\nCharisma: ";
+      output += charisma;
+      output += "\nIntelligence: ";
+      output += intelligence;
+      output += "\nAgility: ";
+      output += agility;
+      output += "\nLuck: ";
+      output += luck;
       
       return output;
 }
