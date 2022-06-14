@@ -164,18 +164,6 @@ public class Character {
          System.out.println("Out of range for " + weaponUsed.getName() + ".");
       }
    }
-
-   // player mines block
-   public Block mineBlock(int x, int y, int pickPower) {
-      //Generating instances of the blocks
-      Block[] newBlock;
-      newBlock = Block.listOfBlocks();
-      //random number to get a random block to break for show
-      int randomNumber = (int)(Math.random() * ((6 - 0) + 1)) + 0;
-      newBlock[randomNumber].breakBlock(x, y, pickPower, newBlock[randomNumber].getDurability()); 
-      
-      return newBlock[randomNumber];
-   }
    
    // toString method
    public String toString(){
