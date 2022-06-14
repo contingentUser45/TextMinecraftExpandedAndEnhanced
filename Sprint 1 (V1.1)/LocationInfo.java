@@ -28,5 +28,19 @@ public class Location {
       this.y2 = y2;
    }
   
-  
+   public String getName() {
+      return this.name;
+   }
+   
+   public int getHealth() {
+      return this.health;
+   }
+   
+   public int getX() {
+      return this.x;
+   }
+   
+   public int getY() {
+      return this.y;
+   }
 }
