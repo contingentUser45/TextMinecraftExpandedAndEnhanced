@@ -2,6 +2,7 @@
 public class Location {
   
   private String locationName;
+   private String reputation;
   private int pointGoodRep;
   private int x1;
   private int y1;
@@ -28,7 +29,7 @@ public class Location {
       return this.locationName;
    }
    
-   public int getHealth() {
+   public String getReputation() {
       if (pointGoodRep <= 0){
          return "Hated";
       }
@@ -50,12 +51,30 @@ public class Location {
       return this.getlocationName;
    }
    
-   public int getReputation() {
-      return this.pointGoodRep;
+   public String getReputation() {
+      return this.reputation;
    }
 
-   // mutators 
-   public void setName(String newName) {
-      this.name = newName;
+   public void changeReputation(int change){
+      int orig = pointGoodRep;
+      pointGoodRep = pointGoodRep - change
+      System.out.print( "/n Reputation: " + orig);
+      if ((orig == pointGoodRep) || ( orig < pointGoodRep)){
+         System.out.print( "Increased to " + pointGoodRep);
+      }
+      if ((orig == pointGoodRep) || ( orig < pointGoodRep)){
+         System.out.print( "Decreased to " + pointGoodRep);
+      }
+   }
+
+   // toString method
+   public String toString(){
+      String output = "";
+      output += "\nLocation Name: ";
+      output += locationName;
+      output += "\nReputation: ";
+      output += reputation;
+
+      return output;
    }
 }
