@@ -4,7 +4,6 @@ public class Location {
   private int difficulty;
   private String locationName;
   private int pointGoodRep;
-  private int pointBadRep;
   private int x1;
   private int y1;
   private int x2;
@@ -16,8 +15,8 @@ public class Location {
    public static int MAX_REPUTATION = 100;
    public static int DEFAULT_REP = 0;
   
-   public Location (int difficulty, locationName, String type, int pointGoodRep, 
-                     int pointBadRep, nt x1, int y1, int x2 int y2){
+   public Location (int difficulty, locationName, String type, int pointGoodRep,
+    int x1, int y1, int x2 int y2){
       this.difficulty = difficulty;
       this.locationName = locationName;
       this.pointGoodRep = DEFAULT_REP;
@@ -28,12 +27,15 @@ public class Location {
       this.y2 = y2;
    }
   
-   public String getName() {
-      return this.name;
+   public String getLocationName() {
+      return this.locationName;
    }
    
    public int getHealth() {
-      return this.health;
+      if (pointGoodRep < 0){
+         return "hated";
+      }
+      else if (pointGoodRep < 0)
    }
    
    public int getX() {
