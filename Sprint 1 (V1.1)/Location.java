@@ -73,7 +73,6 @@ public class Location {
       output += locationName;
       output += "\nReputation: ";
       output += reputation;
-
       return output;
    }
 }
