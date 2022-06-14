@@ -14,6 +14,12 @@ class Main {
 
       String name;
       
+        Location riftenBasic = new Location("Riften", 50,
+    50, 100, 100, 100);
+      
+      Location SHB = new Location("Site Hotel Echo", 0,
+    0, 0, 0, 0);
+      
       // Create character
       
       System.out.print("What is your name: ");
@@ -31,22 +37,19 @@ class Main {
       //Spawn items
       Weapon pickaxe1 = new Weapon ("wood pickaxe", 274, 1, 1, 5, 20);  // make a melee weapon
       Weapon pickaxe2 = new Weapon ("diamond pickaxe", 278, 1, 5, 5, 20);  // make a melee weapon
-      Weapon bow1 = new Weapon ("bow", 261, 1, 5, 25, 20);  // make a range weapon
+      Weapon bow1 = new Weapon ("single shot rifle", 261, 1, 5, 25, 20);  // make a range weapon
       
       //add items to inventory
       inv.addItem(pickaxe1, 1, 0);
       inv.addItem(pickaxe2, 1, 1);
       inv.addItem(bow1, 1, 2);
-      
 
-      //breaking blocks with different pickaxes
-      //select the wood pickaxe
-      inv.changeSelection(1);
-   
-      //Testing character related methods (weapons and food as well)
+      //player will continually get hungrier
+       while (true == true){
+         player1.becomeHungry(0.05);
+         System.out.println(Character.tostring);
+       }
       
-      player1.move(20, 23); // testing movement
-      player1.becomeHungry(5);  // testing hunger 
       
       
       //Spawn mobs
@@ -72,19 +75,7 @@ class Main {
       player1.eat(food2);
       
       player1.heal(2);  // test healing feature
-      
       System.out.println(player1.toString());   // test toString (show attributes after all changes
-      
-      //Testing item related methods
-      
-   
-      //Testing block related methods
-     
-   
-      //Testing mining and inventory methods
-      
-   
-      //Testing moving and world builder methods
       
       
       //Killing the character
@@ -95,4 +86,47 @@ class Main {
      
       System.exit(0);
    }
+   
+   public static int menu() {
+
+        int selection;
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Input your action choice");
+        System.out.println("-------------------------\n");
+        System.out.println("1 - Travel to a Location");
+        System.out.println("2 - Interact with NPC");
+        System.out.println("3 - Eat a Snack");
+        System.out.println("4 - Attack an enemy");
+        System.out.println("4 - Quit");
+
+        try{
+        selection = input.nextInt();
+        }
+        catch {
+           System.out.println("Invalid input");
+        }
+        
+        switch (choice) {
+        case 1:
+            // Perform "original number" case.
+            break;
+        case 2:
+            // Perform "encrypt number" case.
+            break;
+        case 3:
+            System.out.println("Input a men");
+            break;
+        case 4:
+            System.out.println("Quitting Game");
+            break;
+        case 4:
+            System.out.println("Quitting Game");
+                  throw new IOException("User Quit Game");   
+            break;
+        default:
+            System.out.println("Invalid input");
+         
+        return selection;    
+    }
 }
