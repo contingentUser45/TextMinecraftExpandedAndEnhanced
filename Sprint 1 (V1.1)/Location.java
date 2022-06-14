@@ -14,7 +14,7 @@ public class Location {
    public static int MAX_REPUTATION = 100;
    public static int DEFAULT_REP = 50;
   
-   public Location (String locationName, String type, int pointGoodRep,
+   public Location (String locationName, int pointGoodRep,
     int x1, int y1, int x2 int y2){
       this.locationName = locationName;
       this.pointGoodRep = DEFAULT_REP;
