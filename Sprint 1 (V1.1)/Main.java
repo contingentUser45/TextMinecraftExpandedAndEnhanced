@@ -147,6 +147,7 @@ class Main {
                 break;
             case 2:
                 player1.attack(bow1, mob2)
+                player1.takeDamage(2);
                 break;
             case 3:
                 player1.takeDamage(20);
@@ -154,6 +155,8 @@ class Main {
                 System.out.println(Condition(name, false, killedbymob, false));
                 System.out.println("Never Bring a bow to a bombfight");
                 break;
+            default: 
+                System.out.println("Invalid input");
             }
             break;
         case 5:
