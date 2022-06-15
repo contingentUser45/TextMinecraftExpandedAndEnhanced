@@ -70,7 +70,6 @@ class Main {
       
       // create two different foods and eat them
       Food food1 = new Food("egg", 344, 12, 1, 0);
-      player1.eat(food1);
       Food food2 = new Food("chicken", 10, 5, 2, 0);
       player1.eat(food2);
       
@@ -97,8 +96,8 @@ class Main {
         System.out.println("1 - Travel to a Location");
         System.out.println("2 - Interact with NPC");
         System.out.println("3 - Eat a Snack");
-        System.out.println("4 - Attack an enemy");
-        System.out.println("4 - Quit");
+        System.out.println("4 - Attack");
+        System.out.println("5 - Interact with nearest NPC");
 
         try{
         selection = input.nextInt();
@@ -115,18 +114,31 @@ class Main {
             // Perform "encrypt number" case.
             break;
         case 3:
-            System.out.println("Input a men");
-            break;
+            System.out.println("Select a snack:");
+            System.out.println("1 - Eat Snack from Snack Slot 1");
+            System.out.println("2 - Eat Snack from Snack Slot 2");
+            snackSelect = input.nextInt();
+            case 1:
+                player1.eat(food1);
+                break;
+            case 2:
+                player1.eat(food2);
+                break;
+            default:
+                System.out.println("Invalid input");
+            return snackSelect;
         case 4:
             System.out.println("Quitting Game");
             break;
         case 4:
+            System.out.println("Quitting Game");
+            break;
+        case 6:
             System.out.println("Quitting Game");
                   throw new IOException("User Quit Game");   
             break;
         default:
             System.out.println("Invalid input");
-         
         return selection;    
     }
 }
