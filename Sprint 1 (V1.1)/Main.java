@@ -45,9 +45,11 @@ class Main {
       inv.addItem(bow1, 1, 2);
 
       //player will continually get hungrier
-       while (true == true){
-         player1.becomeHungry(0.05);
+       while (player1.health > 0){
+         player1.becomeHungry(0.5);
          System.out.println(Character.tostring);
+
+         menu();
        }
       
       
@@ -55,7 +57,7 @@ class Main {
       //Spawn mobs
       Mob mob1 = new Hostile_Mob("creeper", 5, 20, 29, "sword"); // create mob
       Mob mob2 = new Passive_Mob ("pig", 5, 20, false); // create mob
-      Mob mob3 = new Hostile_Mob("creeper", 5, 20, 29, "sword"); // create mob
+      Mob mob3 = new Hostile_Mob("Insurgent", 5, 20, 2, "C4 Vest"); // create mob
       player1.takeDamage(5);  // test damage taken
       
 
@@ -97,7 +99,8 @@ class Main {
         System.out.println("2 - Interact with NPC");
         System.out.println("3 - Eat a Snack");
         System.out.println("4 - Attack");
-        System.out.println("5 - Interact with nearest NPC");
+        System.out.println("5 - Cheats");
+        System.out.println("6 - Take the easy way out");
 
         try{
         selection = input.nextInt();
@@ -108,16 +111,21 @@ class Main {
         
         switch (choice) {
         case 1:
-            // Perform "original number" case.
+            System.out.println("Type x direction to travel to");
+            int xDirection = input.nextInt();
+            System.out.println("Type y direction to travel to");
+            yDirection = input.nextInt();
+            player1.move(int newX, int newY)
             break;
         case 2:
-            // Perform "encrypt number" case.
+            // to be implemented due to unsolvable issues 
             break;
         case 3:
             System.out.println("Select a snack:");
             System.out.println("1 - Eat Snack from Snack Slot 1");
             System.out.println("2 - Eat Snack from Snack Slot 2");
-            snackSelect = input.nextInt();
+            int snackSelect = input.nextInt();
+            switch (snackSelect) {
             case 1:
                 player1.eat(food1);
                 break;
@@ -126,19 +134,39 @@ class Main {
                 break;
             default:
                 System.out.println("Invalid input");
-            return snackSelect;
+            }
         case 4:
-            System.out.println("Quitting Game");
+            System.out.println("Select Target:");
+            System.out.println("1 - Creeper");
+            System.out.println("2 - Pig");
+            System.out.println("3 - Insurgent");
+            int combat = input.nextInt();
+            switch (combat) {
+            case 1:
+                player1.attack(bow1, mob1)
+                break;
+            case 2:
+                player1.attack(bow1, mob2)
+                break;
+            case 3:
+                player1.takeDamage(20);
+                Boolean killedbymob = true;
+                System.out.println(Condition(name, false, killedbymob, false));
+                System.out.println("Never Bring a bow to a bombfight");
+                break;
+            }
             break;
-        case 4:
-            System.out.println("Quitting Game");
+        case 5:
+            System.out.println("All Cheats are at https://youtu.be/xvFZjo5PgG0");
             break;
         case 6:
             System.out.println("Quitting Game");
-                  throw new IOException("User Quit Game");   
+                player1.takeDamage(20);
+                System.out.println(Condition(name, false, false, false));
+                throw new IOException("User Quit Game");   
             break;
         default:
-            System.out.println("Invalid input");
-        return selection;    
+            System.out.println("Invalid input");    
+        }
     }
 }
