@@ -10,7 +10,7 @@ public class Passive_Mob extends Mob {
    public boolean hasBred;
   
     public Passive_Mob (String name, int x, int y, boolean hasBred){
-      super(name, x, y);
+      super(name, 0, x, y);
       this.hasBred = hasBred;
    }
 }

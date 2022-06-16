@@ -7,13 +7,13 @@
 
 public class Hostile_Mob extends Mob {
 
-   public Item inHand;
+   public String inHand;
    public int damage;
 
-    public Hostile_Mob (String name, int damage, int x, int y, Item inHand){
-      super(name, x, y);
+    public Hostile_Mob (String name, int damage, int x, int y, String string){
+      super(name, damage, x, y);
       this.damage = damage;
-      this.inHand = inHand;
+      this.inHand = string;
    }
    
    public int getDamage() {

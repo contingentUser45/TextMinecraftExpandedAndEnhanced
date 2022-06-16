@@ -9,11 +9,11 @@ public class Character {
    
    // attributes
    private String name;
-   private int health;
+   public int health;
    private int hunger;
    public int xp;
-   private int x;
-   private int y;
+   public int x;
+   public int y;
    
    // constants
    private static int MAX_HEALTH= 20;
@@ -181,4 +181,6 @@ public class Character {
       
       return output;
    }
+
 }
+

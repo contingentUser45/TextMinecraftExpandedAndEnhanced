@@ -1,5 +1,5 @@
 
-public class SPECIAL extends Character{
+public class SPECIAL{ //will rename to something less capslock
   
   public int strength;
   public int perception;
@@ -9,10 +9,9 @@ public class SPECIAL extends Character{
   public int agility;
   public int luck;
   
-  public Character (String name, int xp, int x, int y, int strength,
+  public SPECIAL (int strength,
 int perception, int endurance, int charisma, int intelligence,
 int agility, int luck){
-      super(name, xp, x, y);
      this.strength = strength;
      this.perception = perception;
      this.endurance = endurance;
@@ -40,7 +39,7 @@ int agility, int luck){
    }
   
   public int getIntelligence() {
-      return this.hunger;
+      return this.intelligence;
    }
   
   public int getAgility() {
@@ -50,6 +49,23 @@ int agility, int luck){
    public int getLuck() {
       return this.luck;
    }
+   
+     public void buffup(){
+      if(strength > 10){
+         strength = 10;
+      } else {
+         strength++;
+      }
+   }
+   
+   public void snipedamage(){
+      if(perception > 10){
+         perception = 10;
+      } else {
+         perception++;
+      }
+   }
+
   
      public String toString(){
       String output = "S.P.E.C.I.A.L Stats: ";
@@ -69,4 +85,5 @@ int agility, int luck){
       output += luck;
       
       return output;
+     }
 }

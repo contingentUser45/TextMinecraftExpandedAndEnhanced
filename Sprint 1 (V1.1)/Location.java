@@ -15,7 +15,7 @@ public class Location {
    public static int DEFAULT_REP = 50;
   
    public Location (String locationName, int pointGoodRep,
-    int x1, int y1, int x2 int y2){
+    int x1, int y1, int x2, int y2){
       this.locationName = locationName;
       this.pointGoodRep = DEFAULT_REP;
       this.x1 = x1;
@@ -47,16 +47,13 @@ public class Location {
    }
    
    public String getlocationName() {
-      return this.getlocationName;
+      return this.locationName;
    }
-   
-   public String getReputation() {
-      return this.reputation;
-   }
+
 
    public void changeReputation(int change){
       int orig = pointGoodRep;
-      pointGoodRep = pointGoodRep - change
+      pointGoodRep = pointGoodRep - change;
       System.out.print( "/n Reputation: " + orig);
       if ((orig == pointGoodRep) || ( orig < pointGoodRep)){
          System.out.print( "Increased to " + pointGoodRep);
