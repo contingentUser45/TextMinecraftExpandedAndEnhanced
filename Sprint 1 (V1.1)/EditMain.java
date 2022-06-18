@@ -40,10 +40,12 @@ class Main {
       Weapon pickaxe1 = new Weapon ("wood pickaxe", 274, 1, 1, 5, 20);  // make a melee weapon
       
       //Spawn mobs
-      Mob[] moblist = new Mob[3]
+      Mob[] moblist = new Mob[5]
       moblist[1] = new Hostile_Mob("creeper", 100, 20, 29, "sword"); // create mob
       moblist[2] = new Passive_Mob ("pig", 5, 20, false); // create mob
       moblist[3] = new Hostile_Mob("Insurgent", 50, 20, 20, "C4 Vest"); // create mob
+      moblist[4] = new Passive_Mob ("pig", 5, 20, false); // create mob
+      moblist[5] = new Hostile_Mob("Insurgent", 50, 20, 20, "C4 Vest"); // create mob
       
       // create two different foods
       Food food1 = new Food("Toilet Bowl", 344, 12, 6, 0);
