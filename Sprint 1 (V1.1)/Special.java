@@ -1,5 +1,5 @@
 
-public class SPECIAL{ //will rename to something less capslock
+public class SSpecial extends Character { //will rename to something less capslock
   
   public int strength;
   public int perception;
@@ -9,7 +9,7 @@ public class SPECIAL{ //will rename to something less capslock
   public int agility;
   public int luck;
   
-  public SPECIAL (int strength,
+  public Special(int strength,
 int perception, int endurance, int charisma, int intelligence,
 int agility, int luck){
      this.strength = strength;
