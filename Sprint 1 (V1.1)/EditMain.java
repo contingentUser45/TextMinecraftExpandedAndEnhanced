@@ -41,9 +41,9 @@ class Main {
       
       //Spawn mobs
       Mob[] moblist = new Mob[3]
-      Mob mob1 = new Hostile_Mob("creeper", 100, 20, 29, "sword"); // create mob
-      Mob mob2 = new Passive_Mob ("pig", 5, 20, false); // create mob
-      Mob mob3 = new Hostile_Mob("Insurgent", 50, 20, 20, "C4 Vest"); // create mob
+      moblist[1] = new Hostile_Mob("creeper", 100, 20, 29, "sword"); // create mob
+      moblist[2] = new Passive_Mob ("pig", 5, 20, false); // create mob
+      moblist[3] = new Hostile_Mob("Insurgent", 50, 20, 20, "C4 Vest"); // create mob
       
       // create two different foods
       Food food1 = new Food("Toilet Bowl", 344, 12, 6, 0);
@@ -118,45 +118,22 @@ class Main {
          case 4:
              System.out.println("Select Target:");
              System.out.println("1 - " + mob1.getName());
-             System.out.println("2 - Pig");
-             System.out.println("3 - Insurgent");
              for (int i = 0; i < moblist.length; i++) {
                System.out.println((i + 1) + " - " + moblist[i].getName());
              }
              int combat = input.nextInt();
              combat = combat - 1;
-             
-             switch (combat) {
-             case 1:
                  player1.attack(weaponUsed, moblist[combat]);
                   distance = Math.sqrt(Math.pow((player1.x-mob1.x),2) + Math.pow((player1.y-mob1.y),2));
                  if (distance <= weaponUsed.damageRadius){
                       if (sight < 6) {
-                        player1.takeDamage(20);
+                        player1.takeDamage(2);
                         Boolean killedbymob = true;
                         Condition DeathByBomb = new Condition(name, false, killedbymob, false);
                         System.out.println(DeathByBomb);
                       }
                  }
                  player1.becomeHungry(1);
-                 break;
-                 case 2:
-                 player1.attack(weaponUsed, mob2);
-                 distance = Math.sqrt(Math.pow((player1.x-mob1.x),2) + Math.pow((player1.y-mob1.y),2));
-                 if (distance <= 2){           
-                 player1.takeDamage(2);
-                 }
-                 break;
-             case 3:
-                 player1.takeDamage(20);
-                 Boolean killedbymob = true;
-                 Condition DeathByBomb = new Condition(name, false, killedbymob, false);
-                 System.out.println(DeathByBomb);
-                 System.out.println("Never Bring a bow to a bombfight");
-                 break;
-             default: 
-                 System.out.println("Invalid input");
-             }
              break;
          case 5:
              System.out.println("All Cheats are at https://youtu.be/xvFZjo5PgG0");
