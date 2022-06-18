@@ -37,9 +37,10 @@ class Main {
       
       
       //Spawn items
-      Weapon[] Weaponlist = new ;
-      Weapon ("wood pickaxe", 274, 1, 1, 5, 20);  // make a melee weapon
-      
+      Weapon[] weaponlist = new Weapon[3];
+      weaponlist[0] = new Weapon("Default_WEAPON_IW", 274, 10, 10, 2, 20);
+      weaponlist[1] = new Weapon("J", 274, 10, 10, 15, 20);
+      weaponlist[2] = new Weapon("Default_WEAPON_IW", 274, 10, 10, 30, 20);
       //Spawn mobs
       Mob[] moblist = new Mob[5]
       moblist[0] = new Hostile_Mob("creeper", 100, 20, 29, "sword"); // create mob
@@ -50,7 +51,7 @@ class Main {
       
       // create two different foods
       Food[] foodlist = new Food[2]
-      foodlist[0] = new Food("Toilet Bowl", 344, 12, 6, 0);
+      foodlist[0] = new Food("A long thick object that has \"cum\" inside of it", 344, 12, 6, 0);
       foodlist[1] = new Food("chicken", 10, 5, 2, 0);
       
       Weapon weaponUsed = new Weapon ("Default Weapon", 261, 1, 5, 25, 20);
@@ -60,16 +61,6 @@ class Main {
          System.out.println(player1.toString());
          int power = character.strength;
          int sight = character.perception;
-         if ((power > 5) && (sight > 5)){
-               weaponUsed = new Weapon ("QuickScope 2000", 261, 1, 63, 25, 20);
-          }
-             else if (sight > 5) {
-               weaponUsed = new Weapon ("single shot rifle", 261, 1, 5, 25, 20);
-          }
-             else {
-               weaponUsed = new Weapon ("Stick", 278, 1, 1, 5, 20);
-          }
-         
          int selection;
          Scanner input = new Scanner(System.in);
 
@@ -122,9 +113,6 @@ class Main {
                  if (distance <= weaponUsed.damageRadius){
                       if (sight < 6) {
                         player1.takeDamage(2);
-                        Boolean killedbymob = true;
-                        Condition DeathByBomb = new Condition(name, false, killedbymob, false);
-                        System.out.println(DeathByBomb);
                       }
                  }
                  player1.becomeHungry(1);
@@ -137,7 +125,16 @@ class Main {
                  player1.takeDamage(20);
                  Condition DeathBySewerslide = new Condition(name, false, false, false);
                  System.out.println(DeathBySewerslide);
-                 throw new IOException("User Quit Game");   
+                 throw new IOException("User Quit Game");
+         case 1337:
+            System.out.println("You have found the cheat menu");
+            System.out.println("Select a hack to go full out nuts!");
+             System.out.println("1 - Equip CM901 Modular Rifle");
+             System.out.println("2 - GodMode (Enable/Disable))");
+             System.out.println("3 - Kill Yourself");
+             System.out.println("4 - Smoke Grass");
+             System.out.println("5 - Get Link to ");
+            break;
          default:
              System.out.println("Invalid input");    
              
