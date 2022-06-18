@@ -71,7 +71,8 @@ class Main {
          System.out.println("3 - Eat a Snack");
          System.out.println("4 - Attack");
          System.out.println("5 - Cheats");
-         System.out.println("6 - Take the easy way out");
+         System.out.println("6 - Change Weapon");
+         System.out.println("7 - Take the easy way out");
          try{
          selection = input.nextInt();
          switch (selection) {
@@ -119,7 +120,7 @@ class Main {
          case 5:
              System.out.println("All Cheats are at https://youtu.be/xvFZjo5PgG0");
              break;
-         case 6:
+         case 7:
              System.out.println("Quitting Game");
                  player1.takeDamage(20);
                  Condition DeathBySewerslide = new Condition(name, false, false, false);
@@ -154,13 +155,20 @@ class Main {
                 case 5:
                         System.out.println("https://www.youtube.com/watch?v=r72GP1PIZa0");
                 break;
-         case 2:
-             // to be implemented due to unsolvable issues 
-             System.out.println("to be implemented due to unsolvable issues");
-            break;
+         case 6:
+             System.out.println("Select a snack:");
+             for (int i = 0; i < foodlist.length; i++) {
+               System.out.println((i + 1) + " - " + foodlist[i].getName());
+             }
+             int consumption = input.nextInt();
+             consumption = consumption - 1;
+                 player1.eat(foodlist[consumption]);
+                 player1.heal(2);
+                 character.buffup();
+                 character.snipedamage();
+             break;
          default:
              System.out.println("Invalid input");    
-             
          }
          }
          catch (Exception e){
