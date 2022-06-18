@@ -1,5 +1,5 @@
 
-public class SSpecial extends Character { //will rename to something less capslock
+public class Special extends Character { 
   
   public int strength;
   public int perception;
