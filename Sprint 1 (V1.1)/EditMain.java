@@ -83,7 +83,6 @@ class Main {
 
          try{
          selection = input.nextInt();
-         
          switch (selection) {
          case 1:
              System.out.println("Type x direction to travel to");
