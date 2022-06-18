@@ -39,8 +39,8 @@ class Main {
       //Spawn items
       Weapon[] weaponlist = new Weapon[3];
       weaponlist[0] = new Weapon("Default_WEAPON_IW", 274, 10, 10, 2, 20);
-      weaponlist[1] = new Weapon("J", 274, 10, 10, 15, 20);
-      weaponlist[2] = new Weapon("Default_WEAPON_IW", 274, 10, 10, 30, 20);
+      weaponlist[1] = new Weapon("Steel Block", 271, 1, 1, 15, 20);
+      weaponlist[2] = new Weapon("Stick", 272, 1, 1, 20, 20);
       //Spawn mobs
       Mob[] moblist = new Mob[5]
       moblist[0] = new Hostile_Mob("creeper", 100, 20, 29, "sword"); // create mob
@@ -72,7 +72,6 @@ class Main {
          System.out.println("4 - Attack");
          System.out.println("5 - Cheats");
          System.out.println("6 - Take the easy way out");
-
          try{
          selection = input.nextInt();
          switch (selection) {
@@ -132,8 +131,32 @@ class Main {
              System.out.println("1 - Equip CM901 Modular Rifle");
              System.out.println("2 - GodMode (Enable/Disable))");
              System.out.println("3 - Kill Yourself");
-             System.out.println("4 - Smoke Grass");
-             System.out.println("5 - Get Link to ");
+             System.out.println("4 - Max out SPECIAL stats");
+             System.out.println("5 - Get Link to trailer");
+             int selektion = input.nextInt();
+                switch (selektion)
+                case 1:
+                    System.out.println("Vyberite slot dlya zameny oruzhiya na CM901:");
+                    int cheat1 = input.nextInt();
+                    weaponlist[cheat1] = new Weapon("CM901", 272, 10000, 10000, 347, 20);
+                break;
+                case 2:
+                    System.out.println("Sike, You can't get godmode");
+                break;
+                case 3:
+                    player1.takeDamage(20);
+                    Condition DeathBySewerslide = new Condition(name, false, false, false);
+                    System.out.println(DeathBySewerslide);
+                break;
+                case 4:
+                        character = new SPECIAL (10, 10, 10, 10, 10, 10, 10);
+                break;
+                case 5:
+                        System.out.println("https://www.youtube.com/watch?v=r72GP1PIZa0");
+                break;
+         case 2:
+             // to be implemented due to unsolvable issues 
+             System.out.println("to be implemented due to unsolvable issues");
             break;
          default:
              System.out.println("Invalid input");    
