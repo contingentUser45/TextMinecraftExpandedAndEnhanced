@@ -41,22 +41,22 @@ class Main {
       
       //Spawn mobs
       Mob[] moblist = new Mob[5]
-      moblist[1] = new Hostile_Mob("creeper", 100, 20, 29, "sword"); // create mob
-      moblist[2] = new Passive_Mob ("pig", 5, 20, false); // create mob
-      moblist[3] = new Hostile_Mob("Insurgent", 50, 20, 20, "C4 Vest"); // create mob
-      moblist[4] = new Passive_Mob ("pig", 5, 20, false); // create mob
-      moblist[5] = new Hostile_Mob("Insurgent", 50, 20, 20, "C4 Vest"); // create mob
+      moblist[0] = new Hostile_Mob("creeper", 100, 20, 29, "sword"); // create mob
+      moblist[1] = new Passive_Mob ("pig", 5, 20, false); // create mob
+      moblist[2] = new Hostile_Mob("Insurgent", 50, 20, 20, "C4 Vest"); // create mob
+      moblist[3] = new Passive_Mob ("pig", 5, 20, false); // create mob
+      moblist[4] = new Hostile_Mob("Insurgent", 50, 20, 20, "C4 Vest"); // create mob
       
       // create two different foods
-      Food food1 = new Food("Toilet Bowl", 344, 12, 6, 0);
-      Food food2 = new Food("chicken", 10, 5, 2, 0);
+      Food[] foodlist = new Food[2]
+      foodlist[0] = new Food("Toilet Bowl", 344, 12, 6, 0);
+      foodlist[1] = new Food("chicken", 10, 5, 2, 0);
       
       Weapon weaponUsed = new Weapon ("Default Weapon", 261, 1, 5, 25, 20);
 
       //player will continually get hungrier
        while (player1.health > 0){
          System.out.println(player1.toString());
-         
          int power = character.strength;
          int sight = character.perception;
          if ((power > 5) && (sight > 5)){
@@ -99,23 +99,15 @@ class Main {
              break;
          case 3:
              System.out.println("Select a snack:");
-             System.out.println("1 - Eat Snack from Snack Slot 1");
-             System.out.println("2 - Eat Snack from Snack Slot 2");
-             int snackSelect = input.nextInt();
-             switch (snackSelect) {
-             case 1:
-                 player1.eat(food1);
-                 player1.heal(2);
-                 character.snipedamage();
-                 break;
-             case 2:
-                 player1.eat(food2);
+             for (int i = 0; i < foodlist.length; i++) {
+               System.out.println((i + 1) + " - " + foodlist[i].getName());
+             }
+             int consumption = input.nextInt();
+             consumption = consumption - 1;
+                 player1.eat(foodlist[consumption]);
                  player1.heal(2);
                  character.buffup();
-                 break;
-             default:
-                 System.out.println("Invalid input");
-             }
+                 character.snipedamage();
              break;
          case 4:
              System.out.println("Select Target:");
