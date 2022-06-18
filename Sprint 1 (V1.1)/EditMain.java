@@ -37,7 +37,8 @@ class Main {
       
       
       //Spawn items
-      Weapon pickaxe1 = new Weapon ("wood pickaxe", 274, 1, 1, 5, 20);  // make a melee weapon
+      Weapon[] Weaponlist = new ;
+      Weapon ("wood pickaxe", 274, 1, 1, 5, 20);  // make a melee weapon
       
       //Spawn mobs
       Mob[] moblist = new Mob[5]
