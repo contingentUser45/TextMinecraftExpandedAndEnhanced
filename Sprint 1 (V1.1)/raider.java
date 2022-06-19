@@ -17,24 +17,21 @@ public class raider {
     public void morbius(){
         System.out.println("Cass: Hello, can you hear me?");
         if (intelligence < 2) {
-            System.out.println("1 - Who Are you and what why are you calling me for?");
-             System.out.println("2 - Wrong number. \"hang up\");
-        }
-        else{
              System.out.println("1 - " + UNINTEL_RESPONSE + "?");
              System.out.println("2 - " + UNINTEL_RESPONSE + ".");
+        }
+        else{
+             System.out.println("1 - Who Are you and what why are you calling me for?");
+             System.out.println("2 - Wrong number. \"hang up\"");
+             System.out.println("3 - U tebya yest' dsm?");
             }
              int snackSelect = input.nextInt();
              switch (snackSelect) {
              case 1:
-                 player1.eat(food1);
-                 player1.heal(2);
-                 character.snipedamage();
+
                  break;
              case 2:
-                 player1.eat(food2);
-                 player1.heal(2);
-                 character.buffup();
+
                  break;
              default:
                  System.out.println("Invalid input");
