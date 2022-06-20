@@ -1,0 +1,12 @@
+June 10th 2022 v 0.1
++ added SPECIAL stats
++ added Location
+- removed blocks
+
+June 14th 2022 v 0.2
++ added SPECIAL stats
++ added Location
++ added selektion for aktion
+- removed blocks
+
+(Remember to repair and Retreive)
