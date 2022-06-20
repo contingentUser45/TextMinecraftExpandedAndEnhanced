@@ -24,7 +24,7 @@ class Main {
     0, 0, 0, 0);
       
       
-       SPECIAL character = new SPECIAL (5,
+       Special character = new Special (5,
 5, 5, 5, 5, 5, 5);
       
       // Create character
@@ -42,7 +42,7 @@ class Main {
       weaponlist[1] = new Weapon("Steel Block", 271, 1, 1, 15, 20);
       weaponlist[2] = new Weapon("Stick", 272, 1, 1, 20, 20);
       //Spawn mobs
-      Mob[] moblist = new Mob[5]
+      Mob[] moblist = new Mob[5];
       moblist[0] = new Hostile_Mob("creeper", 100, 20, 29, "sword"); // create mob
       moblist[1] = new Passive_Mob ("pig", 5, 20, false); // create mob
       moblist[2] = new Hostile_Mob("Insurgent", 50, 20, 20, "C4 Vest"); // create mob
@@ -50,7 +50,7 @@ class Main {
       moblist[4] = new Hostile_Mob("Insurgent", 50, 20, 20, "C4 Vest"); // create mob
       
       // create two different foods
-      Food[] foodlist = new Food[2]
+      Food[] foodlist = new Food[2];
       foodlist[0] = new Food("A long thick object that has \"cum\" inside of it", 344, 12, 6, 0);
       foodlist[1] = new Food("chicken", 10, 5, 2, 0);
       
@@ -59,6 +59,7 @@ class Main {
       //player will continually get hungrier
        while (player1.health > 0){
          System.out.println(player1.toString());
+         System.out.println(character.toString());
          int power = character.strength;
          int sight = character.perception;
          int selection;
@@ -85,8 +86,8 @@ class Main {
              player1.becomeHungry(1);
              break;
          case 2:
-             // to be implemented due to unsolvable issues 
-             System.out.println("to be implemented due to unsolvable issues");
+        	 int morbius = character.intelligence;
+        	 raider.morbius(morbius);
              break;
          case 3:
              System.out.println("Select a snack:");
@@ -102,14 +103,13 @@ class Main {
              break;
          case 4:
              System.out.println("Select Target:");
-             System.out.println("1 - " + mob1.getName());
              for (int i = 0; i < moblist.length; i++) {
                System.out.println((i + 1) + " - " + moblist[i].getName());
              }
              int combat = input.nextInt();
              combat = combat - 1;
                  player1.attack(weaponUsed, moblist[combat]);
-                  distance = Math.sqrt(Math.pow((player1.x-mob1.x),2) + Math.pow((player1.y-mob1.y),2));
+                  distance = Math.sqrt(Math.pow((player1.x-moblist[combat].x),2) + Math.pow((player1.y-moblist[combat].y),2));
                  if (distance <= weaponUsed.damageRadius){
                       if (sight < 6) {
                         player1.takeDamage(2);
@@ -135,7 +135,7 @@ class Main {
              System.out.println("4 - Max out SPECIAL stats");
              System.out.println("5 - Get Link to trailer");
              int selektion = input.nextInt();
-                switch (selektion)
+                switch (selektion) {
                 case 1:
                     System.out.println("Vyberite slot dlya zameny oruzhiya na CM901:");
                     int cheat1 = input.nextInt();
@@ -146,26 +146,26 @@ class Main {
                 break;
                 case 3:
                     player1.takeDamage(20);
-                    Condition DeathBySewerslide = new Condition(name, false, false, false);
-                    System.out.println(DeathBySewerslide);
+                    Condition rip = new Condition(name, false, false, false);
+                    System.out.println(rip);
                 break;
                 case 4:
-                        character = new SPECIAL (10, 10, 10, 10, 10, 10, 10);
+                        character = new Special (10, 10, 10, 10, 10, 10, 10);
                 break;
                 case 5:
                         System.out.println("https://www.youtube.com/watch?v=r72GP1PIZa0");
                 break;
+                default:
+                    System.out.println("Invalid input");    
+                }
          case 6:
-             System.out.println("Select a snack:");
-             for (int i = 0; i < foodlist.length; i++) {
-               System.out.println((i + 1) + " - " + foodlist[i].getName());
+             System.out.println("Select a weapon:");
+             for (int i = 0; i < weaponlist.length; i++) {
+               System.out.println((i + 1) + " - " + weaponlist[i].getName());
              }
-             int consumption = input.nextInt();
-             consumption = consumption - 1;
-                 player1.eat(foodlist[consumption]);
-                 player1.heal(2);
-                 character.buffup();
-                 character.snipedamage();
+             int weaponselekt = input.nextInt();
+             weaponselekt = weaponselekt - 1;
+             weaponUsed = weaponlist[weaponselekt];
              break;
          default:
              System.out.println("Invalid input");    
@@ -175,6 +175,5 @@ class Main {
             System.out.println("Invalid input");
          }
        }
-      System.exit(0);
    }
 }

@@ -1,6 +1,12 @@
+/**
+* Names: Cyrus Yang
+* Class: ICS4U1-5A
+* Date: June 19th, 2022
+* Description: Statistical Stats that change how gameplay works
+* 
+*/
 
-public class Special extends Character { 
-  
+public class Special{ 
   public int strength;
   public int perception;
   public int endurance;
