@@ -1,0 +1,30 @@
+June 10th 2022 v 0.1
++ added SPECIAL stats
++ added Location
+- removed blocks
+
+June 11th 2022 v 0.1.1
++ changed location
+
+June 14th 2022 v 0.2
++ added SPECIAL stats
++ added Location
++ added selektion for aktion
++ revamped a lot of the code, added a new push of new features
++ removed some dead code
+- removed blocks
+
+June 14th 2022 v0.2.1
++ debugged the code
+
+June 18th 2022 v0.2.2
++ cleared up dead code
++ added array variants for items
++ dehard coded some sections
++ added some more incremental items
++ added dialogue
++ added a REAL Cheat menu
+- removed overworld
+
+June 20th 2022 v0.2.2
++ debugged entire code
