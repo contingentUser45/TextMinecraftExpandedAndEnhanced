@@ -1,0 +1,14 @@
+How was it like to create Primitive Minecraft?
+
+Primitive Minecraft was not the hardest task I’ve done, but one of the most interesting but tedious tasks ever.
+I had to work with several different classes and rewrite a bit of code and clean it up. Then came the debugging part of the program and that took forever.
+
+What should you have done differently?
+
+Probably, I should have gotten more people to help out of the program as my initial plan was pretty complex,
+and by myself I only implemented about 90% of the plan. With a team I would’ve had more opportunities to bring the ideas to fruition and make it 100%. 
+
+Next steps for Program:
+
+Soon I may implement some new features and get a team to help out. 
+It isn’t easy being the only developer in an unsupported project. Maybe I will improve it much more.
